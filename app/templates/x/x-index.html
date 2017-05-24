@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>记录音乐网</title>
+    <link href="../../static/admin/css/style.css" rel="stylesheet" type="text/css" media="all"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <!--slider-->
+    <link href="../../static/admin/css/slider.css" rel="stylesheet" type="text/css" media="all"/>
+    <script type="text/javascript" src="../../static/admin/js/jquery-1.9.0.min.js"></script>
+    <script type="text/javascript" src="../../static/admin/js/jquery.nivo.slider.js"></script>
+    <script type="text/javascript">
+        $(window).load(function () {
+            $('#slider').nivoSlider();
+        });
+    </script>
+</head>
+<body>
+
+<div class="header">
+    <div class="wrap">
+        <div class="header-top">
+            <div class="logo">
+                <a href="index.html"><img src="../../static/admin/images/logo_back.png" alt=""></a>
+            </div>
+            <div class="menu">
+                <div id="cssmenu">
+                    <ul>
+                        {% block header %}
+                        <li class="active"><a href="#"><span>首页</span></a></li>
+                        <li class="has-sub"><a href="{{ url_for('music.music_human') }}"><span>音乐人</span></a></li>
+                        <li><a href="{{ url_for('music.recording_studio') }}"><span>录音棚</span></a></li>
+                        <li class="last"><a href="#">关于 我们</a></li>
+                        {% endblock %}
+                    </ul>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+
+
+{% block banner %}
+    <div class="slider">
+        <div class="slider-wrapper theme-default">
+            <div id="slider" class="nivoSlider">
+                <img src="../../static/admin/images/banner_10.jpg" alt=""/>
+                <img src="../../static/admin/images/banner4.jpg" alt=""/>
+                <img src="../../static/admin/images/banner3.jpg" alt=""/>
+                <img src="../../static/admin/images/banner2.jpg" alt=""/>
+                <img src="../../static/admin/images/banner1.jpg" alt=""/>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+<div class="main">
+    <div class="content-top">
+        <div class="wrap">
+            <div class="section group">
+                <div class="col_1_of_3 span_1_of_3">
+                    <div class="thumb-pad2">
+                        <div class="thumbnail">
+                            <h4>音乐人</h4>
+                            <figure><img src="../../static/admin/images/pic.jpg" alt=""><em class="sp1"></em></figure>
+                            <div class="caption">
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+                                    euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad
+                                    minim veniam, quis nostrud</p>
+                                <a href="#" class="btn-default btn1">more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="copyrights">Collect from <a href="http://www.cssmoban.com/" title="网站模板">网站模板</a></div>
+                <div class="col_1_of_3 span_1_of_3">
+                    <div class="thumb-pad2">
+                        <div class="thumbnail">
+                            <h4>录音棚</h4>
+                            <figure><img src="../../static/admin/images/pic1.jpg" alt=""><em class="sp1"></em></figure>
+                            <div class="caption">
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+                                    euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad
+                                    minim veniam, quis nostrud</p>
+                                <a href="#" class="btn-default btn1">more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col_1_of_3 span_1_of_3">
+                    <div class="thumb-pad2">
+                        <div class="thumbnail">
+                            <h4>关于我们</h4>
+                            <figure><img src="../../static/admin/images/pic2.jpg" alt=""><em class="sp1"></em></figure>
+                            <div class="caption">
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+                                    euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad
+                                    minim veniam, quis nostrud</p>
+                                <a href="#" class="btn-default btn1">more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+</body>
+</html>
+
+
+
+    	
+    	
+            

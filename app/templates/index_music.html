@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+{% block header %}
+    <head>
+        <title>记录音乐网</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Free Bootstrap Business Template">
+        <meta name="author" content="The Develovers">
+        <!-- CSS -->
+        <link href="../static/music_static/css/bootstrap.css" rel="stylesheet" type="text/css">
+        <link href="../static/music_static/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="../static/music_static/css/main.css" rel="stylesheet" type="text/css">
+        <link href="../static/music_static/css/my-custom-styles.css" rel="stylesheet" type="text/css">
+        <!-- IE 9 Fallback-->
+        <!--[if IE 9]>
+		<link href="../static/music_static/css/ie.css" rel="stylesheet">
+	<![endif]-->
+        <!-- GOOGLE FONTS -->
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400italic,400,600,700' rel='stylesheet'
+              type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,300italic,400italic,700,400,300'
+              rel='stylesheet' type='text/css'>
+        <!-- FAVICONS -->
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../static/music_static/ico/repute144x144.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../static/music_static/ico/repute114x114.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../static/music_static/ico/repute72x72.png">
+        <link rel="apple-touch-icon-precomposed" href="../static/music_static/ico/repute57x57.png">
+        <link rel="shortcut icon" href="../static/music_static/ico/favicon.png">
+    </head>
+{% endblock %}
+{% block body %}
+    <body>
+    <!-- WRAPPER -->
+    <div class="wrapper">
+        <!-- NAVBAR -->
+        {% block navbar %}
+
+            <nav class="navbar navbar-default " role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        {#                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"#}
+                        {#                                data-target="#main-nav">#}
+                        {#                            <span class="sr-only">切换导航条</span>#}
+                        {#                            <i class="fa fa-bars"></i>#}
+                        {#                        </button>#}
+                        <a href="{{ url_for('music.index') }}" class="navbar-brand navbar-logo">
+                            <img src="../static/music_static/img/logo/logo.jpg"
+                                 alt="Repute Lite - Free Bootstrap Business Template">
+                        </a>
+                    </div>
+                    <!-- MAIN NAVIGATION -->
+                    <div id="main-nav" class="navbar-collapse collapse navbar-mega-menu" style="z-index: 2000">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" id="header_active">
+                                    <h4>首页</h4>
+                                    {#                                <i class="fa fa-angle-down"></i>#}
+                                </a>
+                                {#                                                            <ul class="dropdown-menu" role="menu">#}
+                                {#                                                                <li class="active"><a href="index.html">首页</a></li>#}
+                                {#                                                            </ul>#}
+                            </li>
+                            <li class="dropdown ">
+                                <a href="{{ url_for("music.music_human") }}" class="dropdown-toggle"><h4>音乐人</h4>
+                                    {#                                <i class="fa fa-angle-down"></i>#}
+                                </a>
+                                {#                                                            <ul class="dropdown-menu" role="menu">#}
+                                {#                                                                <li><a href="feature-nav-fixed-top.html">Fixed Top Menu</a></li>#}
+                                {#                                                            </ul>#}
+                            </li>
+                            <li class="dropdown ">
+                                <a href="{{ url_for("music.recording_studio") }}" class="dropdown-toggle"><h4>录音棚</h4>
+                                    {#                                <i class="fa fa-angle-down"></i>#}
+                                </a>
+                                {#                                                            <ul class="dropdown-menu" role="menu">#}
+                                {#                                                                <li><a href="page-about-us.html">About Us</a></li>#}
+                                {#                                                            </ul>#}
+                            </li>
+                            <li class="dropdown ">
+                                <a href="{{ url_for('music.news') }}" class="dropdown-toggle"><h4>新闻资讯</h4>
+                                    {#                                <i class="fa fa-angle-down"></i>#}
+                                </a>
+                                {#                                                            <ul class="dropdown-menu" role="menu">#}
+                                {#                                                                <li><a href="portfolio-4-columns.html">Portfolio 4 Columns</a></li>#}
+                                {#                                                            </ul>#}
+                            </li>
+                            <li class="dropdown ">
+                                <a href="{{ url_for('music.about_us') }}" class="dropdown-toggle"><h4>关于我们</h4>
+                                    {#                                <i class="fa fa-angle-down"></i>#}
+                                </a>
+                                {#                                                            <ul class="dropdown-menu" role="menu">#}
+                                {#                                                                <li><a href="blog-single.html">Blog Single</a></li>#}
+                                {#                                                            </ul>#}
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- END MAIN NAVIGATION -->
+                </div>
+            </nav>
+
+        {% endblock %}
+
+        <!-- END NAVBAR -->
+        <!-- HERO UNIT -->
+        {% block banner %}
+
+            <section class="hero-unit-slider slider-responsive no-margin">
+                <div id="carousel-hero" class="slick-carousel">
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <img src="../static/music_static/img/sliders/banner_1.jpg" class="img-responsive"
+                                 alt="Slider Image">
+                            {#                                                <div class="carousel-caption">#}
+                            {#                                                    <h2 class="hero-heading">CLEAN &amp; ELEGANT DESIGN</h2>#}
+                            {#                                                    <p class="lead">Giving valuable reputation and credibility to your business</p>#}
+                            {#                                                    <a href="#" class="btn btn-lg hero-button">LEARN MORE</a>#}
+                            {#                                                </div>#}
+                        </div>
+                        <div class="item">
+                            <img src="../static/music_static/img/sliders/slider2-h500.png" class="img-responsive"
+                                 alt="Slider Image">
+                            {#                                                <div class="carousel-caption">#}
+                            {#                                                    <h2 class="hero-heading">ULTRA RESPONSIVE</h2>#}
+                            {#                                                    <p class="lead">Leave it to the theme, it knows how to deal with screen sizes</p>#}
+                            {#                                                    <a href="#" class="btn btn-lg hero-button">LEARN MORE</a>#}
+                            {#                                                </div>#}
+                        </div>
+                        <div class="item">
+                            <img src="../static/music_static/img/sliders/slider1-h500.png" class="img-responsive"
+                                 alt="Slider Image">
+                            {#                            <div class="carousel-caption">#}
+                            {#                                <h2 class="hero-heading">EASY TO CUSTOMIZE</h2>#}
+                            {#                                <p class="lead">Readable code, well documented and FREE support</p>#}
+                            {#                                <a href="#" class="btn btn-lg hero-button">LEARN MORE</a>#}
+                            {#                            </div>#}
+                        </div>
+                    </div>
+                </div>
+            </section>
+        {% endblock %}
+        <!-- END HERO UNIT -->
+        <!-- MAIN FEATURES -->
+        <!-- END MAIN FEATURES -->
+        <!-- RECENT WORKS -->
+        {% block content %}
+            <section class="recent-works">
+                <div class="container">
+                    <br>
+                    <br>
+                    <br>
+                    <div class="clearfix"></div>
+                    <div class="portfolio-static">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="portfolio-item">
+                                    <div class="overlay"></div>
+                                    <div class="info">
+                                        <h4 class="title">音乐人</h4>
+                                        <p class="brief-description">Music Human</p>
+                                        <a href="{{ url_for('music.music_human') }}" class="btn">了解更多</a>
+                                    </div>
+                                    <div class="media-wrapper">
+                                        <img src="../static/music_static/img/portfolio/800x500/work5.png"
+                                             alt="Item Thumbnail"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="portfolio-item">
+                                    <div class="overlay"></div>
+                                    <div class="info">
+                                        <h4 class="title">录音棚</h4>
+                                        <p class="brief-description">Recording studio</p>
+                                        <a href="{{ url_for("music.recording_studio") }}" class="btn">了解更多</a>
+                                    </div>
+                                    <div class="media-wrapper">
+                                        <img src="../static/music_static/img/portfolio/800x500/work6.png"
+                                             alt="Item Thumbnail"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="portfolio-item">
+                                    <div class="overlay"></div>
+                                    <div class="info">
+                                        <h4 class="title">新闻资讯</h4>
+                                        <p class="brief-description">News</p>
+                                        <a href="{{ url_for("music.news") }}" class="btn">了解更多</a>
+                                    </div>
+                                    <div class="media-wrapper">
+                                        <img src="../static/music_static/img/portfolio/800x500/work7.png"
+                                             alt="Item Thumbnail"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        {% endblock %}
+
+        <!-- END RECENT WORKS -->
+        <!-- TESTIMONIAL -->
+        {% block footer %}
+            <section id="testimoial-parallax" class="testimonial-with-bg parallax">
+                <div class="container">
+                    <div class="testimonial slick-carousel">
+                        <div class="testimonial-container">
+                            <div class="testimonial-body">
+                                <p>爱音乐,在这儿能给你想要的好声音.</p>
+                                <div class="testimonial-author">
+                                    <img src="../static/music_static/img/user2.png" alt="Author" class="pull-left">
+                                    <span><span class="author-name">黄思源</span> <em>CEO of 记录音乐</em></span>
+                                </div>
+                            </div>
+                            <div class="testimonial-body">
+                                <p>爱音乐,在这儿能给你想要的好声音.</p>
+                                <div class="testimonial-author">
+                                    <img src="../static/music_static/img/user1.png" alt="Author" class="pull-left">
+                                    <span><span class="author-name">姚磊</span> <em>COO of 记录音乐</em></span>
+                                </div>
+                            </div>
+                            <div class="testimonial-body">
+                                <p>记录音乐好啊.</p>
+                                <div class="testimonial-author">
+                                    <img src="../static/music_static/img/user5.png" alt="Author" class="pull-left">
+                                    <span><span class="author-name">习大大</span> <em> 国家主席 </em></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div style="right: 5px;">
+                <a href="{{ url_for('admin.login') }}">登录</a>
+            </div>
+        {% endblock %}
+
+        <!-- END TESTIMONIAL -->
+
+
+    </div>
+    <!-- END WRAPPER -->
+    <!-- JAVASCRIPTS -->
+    {% block script %}
+        <script src="../static/music_static/js/jquery-2.1.1.min.js"></script>
+        <script src="../static/music_static/js/bootstrap.min.js"></script>
+        <script src="../static/music_static/js/plugins/slick/slick.min.js"></script>
+        <script src="../static/music_static/js/plugins/stellar/jquery.stellar.min.js"></script>
+        <script src="../static/music_static/js/repute-scripts.js"></script>
+    {% endblock %}
+    </body>
+{% endblock %}
+</html>

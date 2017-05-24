@@ -1,0 +1,186 @@
+{% extends 'index_music.html' %}
+
+{% from './helper.html' import render_admin_pagination as helper %}
+
+<!DOCTYPE html>
+<html lang="en">
+{% block header %}
+    <head>
+        <title>记录音乐网 - 音乐人</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Free Bootstrap Business Template">
+        <meta name="author" content="The Develovers">
+        <!-- CSS -->
+        <link href="../static/music_static/css/bootstrap.css" rel="stylesheet" type="text/css">
+        <link href="../static/music_static/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="../static/music_static/css/main.css" rel="stylesheet" type="text/css">
+        <link href="../static/music_static/css/my-custom-styles.css" rel="stylesheet" type="text/css">
+        <!-- IE 9 Fallback-->
+        <!--[if IE 9]>
+		<link href="../static/music_static/css/ie.css" rel="stylesheet">
+	<![endif]-->
+        <!-- GOOGLE FONTS -->
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400italic,400,600,700' rel='stylesheet'
+              type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,300italic,400italic,700,400,300'
+              rel='stylesheet' type='text/css'>
+        <!-- FAVICONS -->
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../static/music_static/ico/repute144x144.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../static/music_static/ico/repute114x114.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../static/music_static/ico/repute72x72.png">
+        <link rel="apple-touch-icon-precomposed" href="../static/music_static/ico/repute57x57.png">
+        <link rel="shortcut icon" href="../static/music_static/ico/favicon.png">
+    </head>
+{% endblock %}
+{% block body %}
+    <body>
+    <!-- WRAPPER -->
+    <div class="wrapper">
+        <!-- NAVBAR -->
+        {% block navbar %}
+
+            <nav class="navbar navbar-default " role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                                data-target="#main-nav">
+                            <span class="sr-only">Toggle Navigation</span>
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <a href="index.html" class="navbar-brand navbar-logo">
+                            <img src="../static/music_static/img/logo/repute-logo-nav.png"
+                                 alt="Repute Lite - Free Bootstrap Business Template">
+                        </a>
+                    </div>
+                    <!-- MAIN NAVIGATION -->
+                    <div id="main-nav" class="navbar-collapse collapse navbar-mega-menu">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown active">
+                                <a href="{{ url_for('music.index') }}" class="dropdown-toggle">
+                                    <h4>首页</h4>
+                                    {#                                <i class="fa fa-angle-down"></i>#}
+                                </a>
+                                {#                            <ul class="dropdown-menu" role="menu">#}
+                                {#                                <li class="active"><a href="index.html">首页</a></li>#}
+                                {#                            </ul>#}
+                            </li>
+                            <li class="dropdown ">
+                                <a href="#" class="dropdown-toggle" id="header_active"><h4>音乐人</h4>
+                                    {#                                <i class="fa fa-angle-down"></i>#}
+                                </a>
+                                {#                            <ul class="dropdown-menu" role="menu">#}
+                                {#                                <li><a href="feature-nav-fixed-top.html">Fixed Top Menu</a></li>#}
+                                {#                            </ul>#}
+                            </li>
+                            <li class="dropdown ">
+                                <a href="{{ url_for('music.recording_studio') }}" class="dropdown-toggle"><h4>录音棚</h4>
+                                    {#                                <i class="fa fa-angle-down"></i>#}
+                                </a>
+                                {#                            <ul class="dropdown-menu" role="menu">#}
+                                {#                                <li><a href="page-about-us.html">About Us</a></li>#}
+                                {#                            </ul>#}
+                            </li>
+                            <li class="dropdown ">
+                                <a href="{{ url_for('music.news') }}" class="dropdown-toggle"><h4>新闻资讯</h4>
+                                    {#                                <i class="fa fa-angle-down"></i>#}
+                                </a>
+                                {#                            <ul class="dropdown-menu" role="menu">#}
+                                {#                                <li><a href="portfolio-4-columns.html">Portfolio 4 Columns</a></li>#}
+                                {#                            </ul>#}
+                            </li>
+                            <li class="dropdown ">
+                                <a href="{{ url_for('music.about_us') }}" class="dropdown-toggle"><h4>关于我们</h4>
+                                    {#                                <i class="fa fa-angle-down"></i>#}
+                                </a>
+                                {#                            <ul class="dropdown-menu" role="menu">#}
+                                {#                                <li><a href="blog-single.html">Blog Single</a></li>#}
+                                {#                            </ul>#}
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- END MAIN NAVIGATION -->
+
+                </div>
+            </nav>
+        {% endblock %}
+
+        {% block banner %}
+        {% endblock %}
+        {% block content %}
+
+            <!-- END NAVBAR -->
+            <!-- BREADCRUMBS -->
+            <div class="page-header">
+                <div class="container">
+                    <h1 class="page-title pull-left">Music Human</h1>
+                    <ol class="breadcrumb">
+                        <li><a href="#">首页</a></li>
+                        {#                        <li><a href="#"></a></li>#}
+                        <li class="active">音乐人</li>
+                    </ol>
+                </div>
+            </div>
+            <!-- END BREADCRUMBS -->
+            <!-- PAGE CONTENT -->
+            <div class="page-content">
+                <div class="container">
+                    <!-- ITEM FILTERS -->
+                    <ul class="list-inline portfolio-item-filters">
+                        <li style="visibility:hidden;"><a class="active" href="#" data-filter="*">ALL</a></li>
+                        {#  可分类展示用           <li><a href="#" data-filter=".design">DESIGN</a></li>#}
+                        {#                        <li><a href="#" data-filter=".photography">PHOTOGRAPHY</a></li>#}
+                        {#                        <li><a href="#" data-filter=".ui">UI</a></li>#}
+                        {#                        <li><a href="#" data-filter=".ux">UX</a></li>#}
+                    </ul>
+                    <!-- END ITEM FILTERS -->
+                    <!-- PORTFOLIO ITEM WRAPPER -->
+                    <div class="portfolio-item-wrapper">
+                        <ul class="portfolio-item-list portfolio-isotope portfolio-nospace list-col-4">
+                            {% for item in music_humans.items %}
+                                <li class="portfolio-item ux">
+                                    <div class="overlay"></div>
+                                    <h4>{{ item.name }}</h4>
+                                    <div class="info">
+                                        <h4 class="title">{{ item.name }}</h4>
+                                        <p class="brief-description">{{ item.name }}</p>
+                                        <a href="{{ url_for('music.music_human_page',id=item.id) }}" class="btn">了解更多</a>
+                                    </div>
+                                    <div class="media-wrapper">
+                                        {% if item.img %}
+                                            <img src="{{ url_for('music.render_file',filename = item.img) }}"
+                                                 alt="Portfolio Thumbnail">
+                                        {% else %}
+                                            <img src="../static/music_static/img/portfolio/800x800/work3.png"
+                                                 alt="Portfolio Thumbnail">
+                                        {% endif %}
+                                    </div>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {{ helper(music_humans,'music.music_human') }}
+                    <!-- END PORTFOLIO ITEM WRAPPER -->
+                </div>
+            </div>
+        {% endblock %}
+
+        <!-- END PAGE CONTENT -->
+        <!-- FOOTER -->
+        <!-- END FOOTER -->
+        {% block footer %}
+
+        {% endblock %}
+    </div>
+    <!-- END WRAPPER -->
+    <!-- JAVASCRIPTS -->
+    {% block script %}
+        <script src="../static/music_static/js/jquery-2.1.1.min.js"></script>
+        <script src="../static/music_static/js/bootstrap.min.js"></script>
+        <script src="../static/music_static/js/plugins/isotope/isotope.pkgd.js"></script>
+        <script src="../static/music_static/js/repute-scripts.js"></script>
+    {% endblock %}
+
+    </body>
+{% endblock %}
+</html>
