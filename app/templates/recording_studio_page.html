@@ -5,7 +5,7 @@
 <html lang="en">
 {% block header %}
     <head>
-        <title>记录音乐网 - 音乐人</title>
+        <title>记录音乐网 - 录音棚</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Free Bootstrap Business Template">
@@ -119,7 +119,7 @@
 
             <div class="page-header">
                 <div class="container">
-                    <h1 class="page-title pull-left">查看详情</h1>
+                    <h1 class="page-title pull-left">录音棚</h1>
                     {#                    <ol class="breadcrumb">#}
                     {#                        <li><a href="#">首页</a></li>#}
                     {#                        <li><a href="#">音乐人</a></li>#}
@@ -148,10 +148,16 @@
                                             <div class="post-date-info clearfix"><span
                                                     class="post-month">{{ item.release_time.strftime('%d') }}</span><span
                                                     class="post-date">{{ item.release_time.strftime('%m') }}</span>
-                                                <span class="post-year">{{ item.release_time.strftime('%Y') }}</span></div>
-                                            <img src="{{ url_for('music.render_img',filename = item.img) }}"
-                                                 class="img-responsive"
-                                                 alt="featured-image"/>
+                                                <span class="post-year">{{ item.release_time.strftime('%Y') }}</span>
+                                            </div>
+                                            {% if item.img %}
+                                                <img src="{{ url_for('music.render_img',filename = item.img) }}"
+                                                     class="img-responsive"
+                                                     alt="录音棚"/>
+                                            {% else %}
+                                                <img src="{{ url_for('static',filename='music_static/img/portfolio/800x800/work3.png') }}"
+                                                     alt="录音棚">
+                                            {% endif %}
                                         </figure>
                                         <div class="excerpt">
                                             <p>{{ item.content }}</p>

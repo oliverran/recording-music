@@ -6,16 +6,18 @@
 <html lang="en">
 {% block header %}
     <head>
-        <title>记录音乐网 - 音乐人</title>
+        <title>记录音乐网 - 新闻资讯</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Free Bootstrap Business Template">
         <meta name="author" content="The Develovers">
         <!-- CSS -->
-        <link href="../static/music_static/css/bootstrap.css" rel="stylesheet" type="text/css">
-        <link href="../static/music_static/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link href="../static/music_static/css/main.css" rel="stylesheet" type="text/css">
-        <link href="../static/music_static/css/my-custom-styles.css" rel="stylesheet" type="text/css">
+        <link href="{{ url_for('static',filename='music_static/css/bootstrap.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ url_for('static',filename='music_static/css/font-awesome.min.css') }}" rel="stylesheet"
+              type="text/css">
+        <link href="{{ url_for('static',filename='music_static/css/main.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ url_for('static',filename='music_static/my-custom-styles.css') }}" rel="stylesheet"
+              type="text/css">
         <!-- IE 9 Fallback-->
         <!--[if IE 9]>
 		<link href="../static/music_static/css/ie.css" rel="stylesheet">
@@ -26,11 +28,15 @@
         <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,300italic,400italic,700,400,300'
               rel='stylesheet' type='text/css'>
         <!-- FAVICONS -->
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../static/music_static/ico/repute144x144.png">
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../static/music_static/ico/repute114x114.png">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../static/music_static/ico/repute72x72.png">
-        <link rel="apple-touch-icon-precomposed" href="../static/music_static/ico/repute57x57.png">
-        <link rel="shortcut icon" href="../static/music_static/ico/favicon.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144"
+              href="{{ url_for('static',filename='music_static/ico/repute144x144.png') }}">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114"
+              href="{{ url_for('static',filename='music_static/ico/repute114x114.png') }}">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72"
+              href="{{ url_for('static',filename='music_static/ico/repute72x72.png') }}">
+        <link rel="apple-touch-icon-precomposed"
+              href="{{ url_for('static',filename='music_static/ico/repute57x57.png') }}">
+        <link rel="shortcut icon" href="{{ url_for('static',filename='music_static/ico/favicon.png') }}">
     </head>
 {% endblock %}
 {% block body %}
@@ -49,7 +55,7 @@
                             <i class="fa fa-bars"></i>
                         </button>
                         <a href="{{ url_for('music.index') }}" class="navbar-brand navbar-logo">
-                            <img src="../static/music_static/img/logo/repute-logo-nav.png"
+                            <img src="{{ url_for('static',filename='music_static/img/logo/repute-logo-nav.png') }}"
                                  alt="Repute Lite - Free Bootstrap Business Template">
                         </a>
                     </div>
@@ -82,7 +88,8 @@
                                 {#                            </ul>#}
                             </li>
                             <li class="dropdown ">
-                                <a href="{{ url_for('music.news') }}" class="dropdown-toggle" id="header_active"><h4>新闻资讯</h4>
+                                <a href="{{ url_for('music.news') }}" class="dropdown-toggle" id="header_active"><h4>
+                                    新闻资讯</h4>
                                     {#                                <i class="fa fa-angle-down"></i>#}
                                 </a>
                                 {#                            <ul class="dropdown-menu" role="menu">#}
@@ -146,10 +153,12 @@
                             {% for item in news.items %}
                                 <div class="col-md-10 col-sm-6">
                                     <div class="news-item margin-bottom-30px clearfix">
-{#                                       <a href="#"><img src="../static/music_static/img/news/news1.png" class="img-responsive pull-left"#}
-{#                                                                                             alt="News Thumbnail"></a>#}
+                                        {#                                       <a href="#"><img src="../static/music_static/img/news/news1.png" class="img-responsive pull-left"#}
+                                        {#                                                                                             alt="News Thumbnail"></a>#}
                                         <div class="left">
-                                            <h3 class="news-title"><a href="#">{{ item.name }}</a></h3>
+                                            <h3 class="news-title"><a
+                                                    href="{{ url_for('music.news_page',id=item.id) }}">{{ item.name }}</a>
+                                            </h3>
                                             <p>{{ item.content|truncate(200) }}</p>
                                         </div>
                                     </div>
@@ -179,10 +188,10 @@
     <!-- END WRAPPER -->
     <!-- JAVASCRIPTS -->
     {% block script %}
-        <script src="../static/music_static/js/jquery-2.1.1.min.js"></script>
-        <script src="../static/music_static/js/bootstrap.min.js"></script>
-        <script src="../static/music_static/js/plugins/isotope/isotope.pkgd.js"></script>
-        <script src="../static/music_static/js/repute-scripts.js"></script>
+        <script src="{{ url_for('static',filename='music_static/js/jquery-2.1.1.min.js') }}"></script>
+        <script src="{{ url_for('static',filename='music_static/js/bootstrap.min.js') }}"></script>
+        <script src="{{ url_for('static',filename='music_static/js/plugins/isotope/isotope.pkgd.js') }}"></script>
+        <script src="{{ url_for('static',filename='music_static/js/repute-scripts.js') }}"></script>
     {% endblock %}
 
     </body>

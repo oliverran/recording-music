@@ -1,11 +1,11 @@
 {% extends 'index_music.html' %}
 
-{% from './helper.html' import render_admin_pagination as helper %}
+
 <!DOCTYPE html>
 <html lang="en">
 {% block header %}
     <head>
-        <title>记录音乐网 - 录音棚</title>
+        <title>记录音乐网 - 新闻资讯</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Free Bootstrap Business Template">
@@ -15,11 +15,11 @@
         <link href="{{ url_for('static',filename='music_static/css/font-awesome.min.css') }}" rel="stylesheet"
               type="text/css">
         <link href="{{ url_for('static',filename='music_static/css/main.css') }}" rel="stylesheet" type="text/css">
-        <link href="{{ url_for('static',filename='music_static/my-custom-styles.css') }}" rel="stylesheet"
+        <link href="{{ url_for('static',filename='music_static/css/my-custom-styles.css') }}" rel="stylesheet"
               type="text/css">
         <!-- IE 9 Fallback-->
         <!--[if IE 9]>
-		<link href="../static/music_static/css/ie.css" rel="stylesheet">
+		<link href="{{ url_for('static',filename='music_static/css/ie.css') }}" rel="stylesheet">
 	<![endif]-->
         <!-- GOOGLE FONTS -->
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400italic,400,600,700' rel='stylesheet'
@@ -79,7 +79,7 @@
                                 {#                            </ul>#}
                             </li>
                             <li class="dropdown ">
-                                <a href="#" class="dropdown-toggle" id="header_active"><h4>录音棚</h4>
+                                <a href="{{ url_for('music.recording_studio') }}" class="dropdown-toggle"><h4>录音棚</h4>
                                     {#                                <i class="fa fa-angle-down"></i>#}
                                 </a>
                                 {#                            <ul class="dropdown-menu" role="menu">#}
@@ -87,7 +87,8 @@
                                 {#                            </ul>#}
                             </li>
                             <li class="dropdown ">
-                                <a href="{{ url_for('music.news') }}" class="dropdown-toggle"><h4>新闻资讯</h4>
+                                <a href="{{ url_for('music.news') }}" class="dropdown-toggle"><h4>
+                                    新闻资讯</h4>
                                     {#                                <i class="fa fa-angle-down"></i>#}
                                 </a>
                                 {#                            <ul class="dropdown-menu" role="menu">#}
@@ -112,80 +113,81 @@
 
         {% block banner %}
         {% endblock %}
+        <!-- END NAVBAR -->
+        <!-- BREADCRUMBS -->
         {% block content %}
 
-            <!-- END NAVBAR -->
-            <!-- BREADCRUMBS -->
             <div class="page-header">
                 <div class="container">
-                    <h1 class="page-title pull-left">Recording Studio</h1>
-                    <ol class="breadcrumb">
-                        <li><a href="#">首页</a></li>
-                        {#                        <li><a href="#"></a></li>#}
-                        <li class="active">录音棚</li>
-                    </ol>
+                    <h1 class="page-title pull-left">新闻资讯</h1>
+                    {#                    <ol class="breadcrumb">#}
+                    {#                        <li><a href="#">首页</a></li>#}
+                    {#                        <li><a href="#">音乐人</a></li>#}
+                    {#                        <li class="active">Blog Single</li>#}
+                    {#                    </ol>#}
                 </div>
             </div>
             <!-- END BREADCRUMBS -->
             <!-- PAGE CONTENT -->
             <div class="page-content">
                 <div class="container">
-                    <!-- ITEM FILTERS -->
-                    <ul class="list-inline portfolio-item-filters">
-                        <li style="visibility:hidden;"><a class="active" href="#" data-filter="*">ALL</a></li>
-                        {#                        <li><a href="#" data-filter=".design">DESIGN</a></li>#}
-                        {#                        <li><a href="#" data-filter=".photography">PHOTOGRAPHY</a></li>#}
-                        {#                        <li><a href="#" data-filter=".ui">UI</a></li>#}
-                        {#                        <li><a href="#" data-filter=".ux">UX</a></li>#}
-                    </ul>
-                    <!-- END ITEM FILTERS -->
-                    <!-- PORTFOLIO ITEM WRAPPER -->
-                    <div class="portfolio-item-wrapper">
-                        <ul class="portfolio-item-list portfolio-isotope portfolio-nospace list-col-4">
-                            {% for item in studios.items %}
-                                <li class="portfolio-item ux">
-                                    <div class="overlay"></div>
-                                    <h4>{{ item.name }}</h4>
-                                    <div class="info">
-                                        <h4 class="title">{{ item.name }}</h4>
-                                        <p class="brief-description">{{ item.name }}</p>
-                                        <a href="{{ url_for('music.recording_studio_page',id=item.id) }}" class="btn">了解更多</a>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- BLOG SINGLE -->
+                            <div class="blog single full-thumbnail">
+                                <!-- blog post -->
+                                <article class="entry-post">
+                                    <header class="entry-header">
+                                        <h2 class="entry-title">
+                                            <span>{{ item.name }}</span>
+                                        </h2>
+                                    </header>
+                                    <br>
+                                    <div class="entry-content clearfix">
+                                        <figure class="featured-image">
+{#                                            <div class="post-date-info clearfix"><span#}
+{#                                                    class="post-month">{{ item.release_time.strftime('%d') }}</span><span#}
+{#                                                    class="post-date">{{ item.release_time.strftime('%m') }}</span>#}
+{#                                                <span class="post-year">{{ item.release_time.strftime('%Y') }}</span>#}
+{#                                            </div>#}
+{#                                            {% if item.img %}#}
+{#                                                <img src="{{ url_for('music.render_img',filename = item.img) }}"#}
+{#                                                     class="img-responsive"#}
+{#                                                     alt="新闻资讯"/>#}
+{#                                            {% else %}#}
+{#                                                <img src="{{ url_for('static',filename='music_static/img/portfolio/800x800/work3.png') }}"#}
+{#                                                     alt="新闻资讯">#}
+{#                                            {% endif %}#}
+{#                                        </figure>#}
+                                        <div class="excerpt">
+                                            <p>{{ item.content }}</p>
+                                        </div>
                                     </div>
-                                    <div class="media-wrapper">
-                                        {% if item.img %}
-                                            <img src="{{ url_for('music.render_file',filename = item.img) }}"
-                                                 alt="Portfolio Thumbnail">
-                                        {% else %}
-                                            <img src="{{ url_for('static',filename='music_static/img/portfolio/800x800/work3.png') }}"
-                                                 alt="Portfolio Thumbnail">
-                                        {% endif %}
-                                    </div>
-                                </li>
-                            {% endfor %}
-                        </ul>
+                                </article>
+                                <!-- end blog post -->
+                                <hr>
+                                <!-- social sharing -->
+                            </div>
+                            <!-- END BLOG SINGLE -->
+                        </div>
                     </div>
-                    {{ helper(studios,'music.recording_studio') }}
-                    <!-- END PORTFOLIO ITEM WRAPPER -->
                 </div>
             </div>
         {% endblock %}
-
-        <!-- END PAGE CONTENT -->
-        <!-- FOOTER -->
-        <!-- END FOOTER -->
         {% block footer %}
 
         {% endblock %}
+
+
     </div>
     <!-- END WRAPPER -->
     <!-- JAVASCRIPTS -->
     {% block script %}
+
         <script src="{{ url_for('static',filename='music_static/js/jquery-2.1.1.min.js') }}"></script>
         <script src="{{ url_for('static',filename='music_static/js/bootstrap.min.js') }}"></script>
-        <script src="{{ url_for('static',filename='music_static/js/plugins/isotope/isotope.pkgd.js') }}"></script>
         <script src="{{ url_for('static',filename='music_static/js/repute-scripts.js') }}"></script>
     {% endblock %}
-
     </body>
 {% endblock %}
 </html>

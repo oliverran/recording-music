@@ -3,7 +3,7 @@ from flask.views import MethodView
 from ..model import db, Human, Studio, News
 import os
 
-music = Blueprint('music', __name__, static_url_path='')
+music = Blueprint('music', __name__, static_folder='', static_url_path='')
 
 UPLOAD_FOLDER = os.getcwd() + r'/app/static/uploads'
 
@@ -54,4 +54,16 @@ def about_us():
 class MusicHumanPage(MethodView):
     def get(self, id=None):
         item = db.session.query(Human).get(id)
-        return render_template('three.html', item=item)
+        return render_template('music_human_page.html', item=item)
+
+
+class RecordingStudioPage(MethodView):
+    def get(self, id=None):
+        item = db.session.query(Studio).get(id)
+        return render_template('recording_studio_page.html', item=item)
+
+
+class NewsPage(MethodView):
+    def get(self, id=None):
+        item = db.session.query(News).get(id)
+        return render_template('news_page.html', item=item)
