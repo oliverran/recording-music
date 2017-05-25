@@ -9,6 +9,7 @@ from werkzeug.utils import secure_filename
 admin = Blueprint('admin', __name__, static_url_path='', )
 
 login_manager = LoginManager()
+login_manager.session_protection = "strong"
 UPLOAD_FOLDER = os.getcwd() + r'/app/static/uploads'
 
 
@@ -37,7 +38,7 @@ class LoginView(MethodView):
         if form.validate_on_submit():
             user = db.session.query(User).filter_by(username=form.username.data).first()
             if user and user.check_password(form.password.data):
-                login_user(user)
+                login_user(user,remember=False)
                 return redirect(url_for('admin.select_category'))
             else:
                 flash('用户名或密码错误！')
