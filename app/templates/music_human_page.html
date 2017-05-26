@@ -15,6 +15,8 @@
         <link href="{{ url_for('static',filename='music_static/css/font-awesome.min.css') }}" rel="stylesheet"
               type="text/css">
         <link href="{{ url_for('static',filename='music_static/css/main.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ url_for('static',filename='dist/css/wangEditor.min.css') }}" rel="stylesheet" type="text/css">
+
         <link href="{{ url_for('static',filename='music_static/css/my-custom-styles.css') }}" rel="stylesheet"
               type="text/css">
         <!-- IE 9 Fallback-->
@@ -105,8 +107,6 @@
                             </li>
                         </ul>
                     </div>
-                    <!-- END MAIN NAVIGATION -->
-
                 </div>
             </nav>
         {% endblock %}
@@ -116,7 +116,6 @@
         <!-- END NAVBAR -->
         <!-- BREADCRUMBS -->
         {% block content %}
-
             <div class="page-header">
                 <div class="container">
                     <h1 class="page-title pull-left">音乐人</h1>
@@ -144,7 +143,7 @@
                                     </header>
                                     <br>
                                     <div class="entry-content clearfix">
-                                        <figure class="featured-image">
+                                        <figure class="featured-image" >
                                             <div class="post-date-info clearfix"><span
                                                     class="post-month">{{ item.release_time.strftime('%d') }}</span><span
                                                     class="post-date">{{ item.release_time.strftime('%m') }}</span>
@@ -160,7 +159,7 @@
                                             {% endif %}
                                         </figure>
                                         <div class="excerpt">
-                                            <p>{{ item.content }}</p>
+                                            <p id="textarea1">{{ item.content|safe }}</p>
                                         </div>
                                     </div>
                                 </article>
@@ -183,8 +182,8 @@
     <!-- END WRAPPER -->
     <!-- JAVASCRIPTS -->
     {% block script %}
-
         <script src="{{ url_for('static',filename='music_static/js/jquery-2.1.1.min.js') }}"></script>
+        <script src="{{ url_for('static',filename='dist/js/wangEditor.min.js') }}"></script>
         <script src="{{ url_for('static',filename='music_static/js/bootstrap.min.js') }}"></script>
         <script src="{{ url_for('static',filename='music_static/js/repute-scripts.js') }}"></script>
     {% endblock %}

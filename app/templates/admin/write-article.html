@@ -13,6 +13,7 @@
         <link href="{{ url_for('static',filename='music_static/css/font-awesome.min.css') }}" rel="stylesheet"
               type="text/css">
         <link href="{{ url_for('static',filename='music_static/css/main.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ url_for('static',filename='dist/css/wangEditor.min.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ url_for('static',filename='music_static/my-custom-styles.css') }}" rel="stylesheet"
               type="text/css">
         <!-- IE 9 Fallback-->
@@ -42,7 +43,6 @@
     <div class="wrapper">
         <!-- NAVBAR -->
         {% block navbar %}
-
             <nav class="navbar navbar-default " role="navigation">
                 <div class="container">
                     <div class="navbar-header">
@@ -132,7 +132,7 @@
                     <br><br>
                     <div class="wrapper">
                         <div class="row">
-                            <div class="col-lg-8 col-lg-offset-1">
+                            <div class="col-lg-12 ">
                                 <section class="panel">
                                     <header class="panel-heading">
                                     </header>
@@ -154,7 +154,7 @@
 
                                             <div class="form-group">
                                                 {{ form.content.label }}<br>
-                                                {{ form.content(class=" form-control xheditor-simple" ,cols="100",rows="20",placeholder="请输入内容") }}
+                                                {{ form.content(class=" form-control xheditor-simple" ,id="textarea1",cols="100",rows="25",placeholder="请输入内容") }}
                                             </div>
                                             {#                            <div class="form-group">#}
                                             {#                                {{ form.img.label }}#}
@@ -186,9 +186,28 @@
     <!-- JAVASCRIPTS -->
     {% block script %}
         <script src="{{ url_for('static',filename='music_static/js/jquery-2.1.1.min.js') }}"></script>
+        <script src="{{ url_for('static',filename='dist/js/wangEditor.min.js') }}"></script>
         <script src="{{ url_for('static',filename='music_static/js/bootstrap.min.js') }}"></script>
         <script src="{{ url_for('static',filename='music_static/js/plugins/isotope/isotope.pkgd.js') }}"></script>
         <script src="{{ url_for('static',filename='music_static/js/repute-scripts.js') }}"></script>
+        <script type="text/javascript">
+            var editor = new wangEditor('textarea1');
+            editor.config.menus = $.map(wangEditor.config.menus, function (item, key) {
+                if (item === 'insertcode') {
+                    return null;
+                }
+                 if (item === 'source') {
+                    return null;
+                }
+                if (item === 'fullscreen') {
+                    return null;
+                }
+                return item;
+            });
+            editor.create();
+
+        </script>
+
     {% endblock %}
 
     </body>

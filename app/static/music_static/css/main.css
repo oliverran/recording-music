@@ -2723,6 +2723,7 @@ ul.social-icons li a i {
 /* ----------------------------------------------------- */
 .no-margin {
     margin: 0 !important;
+    height: 500px;
 }
 
 .no-padding {

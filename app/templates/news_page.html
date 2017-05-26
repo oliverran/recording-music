@@ -15,6 +15,7 @@
         <link href="{{ url_for('static',filename='music_static/css/font-awesome.min.css') }}" rel="stylesheet"
               type="text/css">
         <link href="{{ url_for('static',filename='music_static/css/main.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ url_for('static',filename='dist/css/wangEditor.min.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ url_for('static',filename='music_static/css/my-custom-styles.css') }}" rel="stylesheet"
               type="text/css">
         <!-- IE 9 Fallback-->
@@ -145,23 +146,24 @@
                                     <br>
                                     <div class="entry-content clearfix">
                                         <figure class="featured-image">
-{#                                            <div class="post-date-info clearfix"><span#}
-{#                                                    class="post-month">{{ item.release_time.strftime('%d') }}</span><span#}
-{#                                                    class="post-date">{{ item.release_time.strftime('%m') }}</span>#}
-{#                                                <span class="post-year">{{ item.release_time.strftime('%Y') }}</span>#}
-{#                                            </div>#}
-{#                                            {% if item.img %}#}
-{#                                                <img src="{{ url_for('music.render_img',filename = item.img) }}"#}
-{#                                                     class="img-responsive"#}
-{#                                                     alt="新闻资讯"/>#}
-{#                                            {% else %}#}
-{#                                                <img src="{{ url_for('static',filename='music_static/img/portfolio/800x800/work3.png') }}"#}
-{#                                                     alt="新闻资讯">#}
-{#                                            {% endif %}#}
-{#                                        </figure>#}
-                                        <div class="excerpt">
-                                            <p>{{ item.content }}</p>
-                                        </div>
+                                            {#                                            <div class="post-date-info clearfix"><span#}
+                                            {#                                                    class="post-month">{{ item.release_time.strftime('%d') }}</span><span#}
+                                            {#                                                    class="post-date">{{ item.release_time.strftime('%m') }}</span>#}
+                                            {#                                                <span class="post-year">{{ item.release_time.strftime('%Y') }}</span>#}
+                                            {#                                            </div>#}
+                                            {#                                            {% if item.img %}#}
+                                            {#                                                <img src="{{ url_for('music.render_img',filename = item.img) }}"#}
+                                            {#                                                     class="img-responsive"#}
+                                            {#                                                     alt="新闻资讯"/>#}
+                                            {#                                            {% else %}#}
+                                            {#                                                <img src="{{ url_for('static',filename='music_static/img/portfolio/800x800/work3.png') }}"#}
+                                            {#                                                     alt="新闻资讯">#}
+                                            {#                                            {% endif %}#}
+                                            {#                                        </figure>#}
+                                            <div class="excerpt">
+                                                <p>{{ item.content|safe }}</p>
+                                            </div>
+                                        </figure>
                                     </div>
                                 </article>
                                 <!-- end blog post -->
@@ -183,8 +185,8 @@
     <!-- END WRAPPER -->
     <!-- JAVASCRIPTS -->
     {% block script %}
-
         <script src="{{ url_for('static',filename='music_static/js/jquery-2.1.1.min.js') }}"></script>
+        <script src="{{ url_for('static',filename='dist/js/wangEditor.min.js') }}"></script>
         <script src="{{ url_for('static',filename='music_static/js/bootstrap.min.js') }}"></script>
         <script src="{{ url_for('static',filename='music_static/js/repute-scripts.js') }}"></script>
     {% endblock %}
