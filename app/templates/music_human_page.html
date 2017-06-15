@@ -15,19 +15,20 @@
         <link href="{{ url_for('static',filename='music_static/css/font-awesome.min.css') }}" rel="stylesheet"
               type="text/css">
         <link href="{{ url_for('static',filename='music_static/css/main.css') }}" rel="stylesheet" type="text/css">
-        <link href="{{ url_for('static',filename='dist/css/wangEditor.min.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ url_for('static',filename='WYSIWYG/css/wangEditor.min.css') }}" rel="stylesheet" type="text/css">
 
         <link href="{{ url_for('static',filename='music_static/css/my-custom-styles.css') }}" rel="stylesheet"
               type="text/css">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='unslider/css/unslider.css') }}">
         <!-- IE 9 Fallback-->
         <!--[if IE 9]>
 		<link href="{{ url_for('static',filename='music_static/css/ie.css') }}" rel="stylesheet">
 	<![endif]-->
         <!-- GOOGLE FONTS -->
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400italic,400,600,700' rel='stylesheet'
-              type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,300italic,400italic,700,400,300'
-              rel='stylesheet' type='text/css'>
+        {#        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400italic,400,600,700' rel='stylesheet'#}
+        {#              type='text/css'>#}
+        {#        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,300italic,400italic,700,400,300'#}
+        {#              rel='stylesheet' type='text/css'>#}
         <!-- FAVICONS -->
         <link rel="apple-touch-icon-precomposed" sizes="144x144"
               href="{{ url_for('static',filename='music_static/ico/repute144x144.png') }}">
@@ -143,24 +144,26 @@
                                     </header>
                                     <br>
                                     <div class="entry-content clearfix">
-                                        <figure class="featured-image" >
-                                            <div class="post-date-info clearfix"><span
-                                                    class="post-month">{{ item.release_time.strftime('%d') }}</span><span
-                                                    class="post-date">{{ item.release_time.strftime('%m') }}</span>
-                                                <span class="post-year">{{ item.release_time.strftime('%Y') }}</span>
-                                            </div>
-                                            {% if item.img %}
-                                                <img src="{{ url_for('music.render_img',filename = item.img) }}"
-                                                     class="img-responsive"
-                                                     alt="音乐人"/>
-                                            {% else %}
-                                                <img src="{{ url_for('static',filename='music_static/img/portfolio/800x800/work3.png') }}"
-                                                     alt="音乐人">
-                                            {% endif %}
-                                        </figure>
+{#                                        <figure class="featured-image">#}
+{#                                            <div class="post-date-info clearfix"><span#}
+{#                                                    class="post-month">{{ item.release_time.strftime('%d') }}</span><span#}
+{#                                                    class="post-date">{{ item.release_time.strftime('%m') }}</span>#}
+{#                                                <span
+ class="post-year">{{ item.release_time.strftime('%Y') }}</span>#}
+{#                                            </div>#}
+{#                                            {% if item.img %}#}
+{#                                                <img src="{{ url_for('music.render_img',filename = item.img) }}"#}
+{#                                                     class="img-responsive"#}
+{#                                                     alt="音乐人"/>#}
+{#                                            {% else %}#}
+{#                                                <img src="{{ url_for('static',filename='music_static/img/portfolio/800x800/work3.png') }}"#}
+{#                                                     alt="音乐人">#}
+{#                                            {% endif %}#}
+{#                                        </figure>#}
                                         <div class="excerpt">
                                             <p id="textarea1">{{ item.content|safe }}</p>
                                         </div>
+
                                     </div>
                                 </article>
                                 <!-- end blog post -->
@@ -183,9 +186,12 @@
     <!-- JAVASCRIPTS -->
     {% block script %}
         <script src="{{ url_for('static',filename='music_static/js/jquery-2.1.1.min.js') }}"></script>
-        <script src="{{ url_for('static',filename='dist/js/wangEditor.min.js') }}"></script>
+        <script src="{{ url_for('static',filename='WYSIWYG/js/wangEditor.min.js') }}"></script>
         <script src="{{ url_for('static',filename='music_static/js/bootstrap.min.js') }}"></script>
         <script src="{{ url_for('static',filename='music_static/js/repute-scripts.js') }}"></script>
+        <script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+        {#        <script src="{{ url_for('static',filename='unslider/js/unslider-min.js') }}"></script>#}
+
     {% endblock %}
     </body>
 {% endblock %}

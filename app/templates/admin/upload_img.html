@@ -1,0 +1,92 @@
+{% extends 'index_music.html' %}
+
+{% from './helper.html' import messages,render_admin_pagination as helper %}
+
+<!DOCTYPE html>
+<html lang="en">
+{% block header %}
+    <head>
+        <title>图片列表</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Free Bootstrap Business Template">
+        <meta name="author" content="The Develovers">
+        <!-- CSS -->
+        <link href="{{ url_for('static',filename='music_static/css/bootstrap.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ url_for('static',filename='music_static/css/font-awesome.min.css') }}" rel="stylesheet"
+              type="text/css">
+        <link href="{{ url_for('static',filename='music_static/css/main.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ url_for('static',filename='music_static/my-custom-styles.css') }}" rel="stylesheet"
+              type="text/css">
+        <!-- IE 9 Fallback-->
+        <!--[if IE 9]>
+		<link href="../static/music_static/css/ie.css" rel="stylesheet">
+	<![endif]-->
+        <!-- GOOGLE FONTS -->
+        {#        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400italic,400,600,700' rel='stylesheet'#}
+        {#              type='text/css'>#}
+        {#        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,300italic,400italic,700,400,300'#}
+        {#              rel='stylesheet' type='text/css'>#}
+        <!-- FAVICONS -->
+        <link rel="apple-touch-icon-precomposed" sizes="144x144"
+              href="{{ url_for('static',filename='music_static/ico/repute144x144.png') }}">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114"
+              href="{{ url_for('static',filename='music_static/ico/repute114x114.png') }}">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72"
+              href="{{ url_for('static',filename='music_static/ico/repute72x72.png') }}">
+        <link rel="apple-touch-icon-precomposed"
+              href="{{ url_for('static',filename='music_static/ico/repute57x57.png') }}">
+        <link rel="shortcut icon" href="{{ url_for('static',filename='music_static/ico/favicon.png') }}">
+    </head>
+{% endblock %}
+{% block body %}
+    <body>
+    <!-- WRAPPER -->
+    <div class="wrapper">
+        <!-- NAVBAR -->
+        {% block navbar %}
+
+        {% endblock %}
+
+        {% block banner %}
+        {% endblock %}
+        {% block content %}
+            <div class="page-content">
+                <div class="container">
+                    <!-- ITEM FILTERS -->
+                    <ul class="list-inline portfolio-item-filters">
+                        <li style="visibility:hidden;"><a class="active" href="#" data-filter="*">ALL</a></li>
+                    </ul>
+                    <form role="form" enctype="multipart/form-data" method="post" action="#">
+                        <br>
+                        {{ messages(get_flashed_messages) }}
+
+                        <label for="img">图片上传</label>
+                        {{ form.img }}
+                        <button type="submit" class="btn btn-info">提 交</button>
+                        <a href="{{ url_for('admin.select_category') }}" type="submit"
+                           class="btn btn-info">返回列表</a>
+                    </form>
+                </div>
+            </div>
+        {% endblock %}
+
+        <!-- END PAGE CONTENT -->
+        <!-- FOOTER -->
+        <!-- END FOOTER -->
+        {% block footer %}
+
+        {% endblock %}
+    </div>
+    <!-- END WRAPPER -->
+    <!-- JAVASCRIPTS -->
+    {% block script %}
+        <script src="{{ url_for('static',filename='music_static/js/jquery-2.1.1.min.js') }}"></script>
+        <script src="{{ url_for('static',filename='music_static/js/bootstrap.min.js') }}"></script>
+        <script src="{{ url_for('static',filename='music_static/js/plugins/isotope/isotope.pkgd.js') }}"></script>
+        <script src="{{ url_for('static',filename='music_static/js/repute-scripts.js') }}"></script>
+    {% endblock %}
+
+    </body>
+{% endblock %}
+</html>

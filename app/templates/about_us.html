@@ -20,10 +20,10 @@
 		<link href="../static/music_static/css/ie.css" rel="stylesheet">
 	<![endif]-->
         <!-- GOOGLE FONTS -->
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400italic,400,600,700' rel='stylesheet'
-              type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,300italic,400italic,700,400,300'
-              rel='stylesheet' type='text/css'>
+        {#        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400italic,400,600,700' rel='stylesheet'#}
+        {#              type='text/css'>#}
+        {#        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,300italic,400italic,700,400,300'#}
+        {#              rel='stylesheet' type='text/css'>#}
         <!-- FAVICONS -->
         <link rel="apple-touch-icon-precomposed" sizes="144x144"
               href="{{ url_for('static',filename='music_static/ico/repute144x144.png') }}">
@@ -147,20 +147,17 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-5">
-                                <p>Competently extend highly efficient initiatives whereas collaborative alignments.
-                                    Collaboratively seize impactful opportunities and focused bandwidth. Continually
-                                    expedite adaptive manufactured products and customer directed intellectual capital.
-                                    Completely restore intermandated mindshare after multimedia based ideas. Credibly
-                                    initiate distinctive metrics.</p>
-                                <p>Authoritatively embrace performance based information before highly efficient
-                                    solutions. Globally disintermediate ubiquitous "outside the box" thinking without
-                                    client-based schemas. Credibly parallel task dynamic technologies and cross-platform
-                                    total linkage. Authoritatively unleash emerging growth strategies whereas
-                                    future-proof resources. Distinctively transition 24/7 partnerships without effective
-                                    testing procedures. Distinctively underwhelm proactive intellectual capital rather
-                                    than best-of-breed total linkage. Uniquely whiteboard distinctive methods of
-                                    empowerment after.</p>
+                                <p>我们喜欢热爱音乐，所以一直坚持前行。</p>
+
+                                <p> 记录音乐recording-music平台：
+                                    我们会把全国所有优秀的音乐人、团队、录音棚等信息展示在这里。
+                                    我们提供不同地域优秀音乐人为您打造属于自己的好音乐，好歌曲。
+                                    也欢迎更多热爱音乐的朋友加入我们</p>
                                 <br>
+                                <div class="widget">
+                                    <img src="{{ url_for('static',filename='music_static/img/weixin.jpg') }}" alt="微信">
+                                </div>
+
                                 <!-- CONCTACT FORM -->
                                 <!-- END CONCTACT FORM -->
                             </div>
@@ -169,30 +166,30 @@
                                 <div class="widget">
                                     <h3 class="widget-title">联系方式</h3>
                                     <ul class="contact-info fa-ul">
-                                        <li><i class="fa fa-li fa-building-o"></i> 76 Ninth Ave, New York, USA</li>
-                                        <li><i class="fa fa-li fa-phone"></i> +621 234 4567</li>
+                                        <li><i class="fa fa-li fa-building-o"></i>QQ: 860299791 </li>
+                                        <li><i class="fa fa-li fa-phone"></i>TEL: 13671209183</li>
                                         <li><i class="fa fa-li fa-envelope-o"></i> <a
-                                                href="mailto:hello@yourcompany.com">hello@yourcompany.com</a></li>
+                                                href="mailto:hello@yourcompany.com">E-MAIL: 860299791@qq.com</a></li>
                                     </ul>
                                 </div>
-                                <div class="widget">
-                                    <h3 class="widget-title">营业时间</h3>
-                                    <ul class="list-unstyled">
-                                        <li><strong>Monday-Friday: </strong> 8am to 5pm</li>
-                                        <li><strong>Saturday: </strong> 10am to 2pm</li>
-                                        <li><strong>Sunday: </strong> Closed</li>
-                                    </ul>
-                                </div>
+{#                                <div class="widget">#}
+{#                                    <h3 class="widget-title">营业时间</h3>#}
+{#                                    <ul class="list-unstyled">#}
+{#                                        <li><strong>Monday-Friday: </strong> 8am to 5pm</li>#}
+{#                                        <li><strong>Saturday: </strong> 10am to 2pm</li>#}
+{#                                        <li><strong>Sunday: </strong> Closed</li>#}
+{#                                    </ul>#}
+{#                                </div>#}
 
                             </div>
                             <div class="col-md-3">
 
-                                <div class="widget">
-                                    <h3 class="widget-title">到达这里</h3>
-                                    <iframe src="http://www.google.cn/maps/embed?pb=!1m18!1m12!1m3!1d3061.3214883894257!2d116.33483666515049!3d39.88943389546333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35f04de89c42054d%3A0xa2f5eca565eb0226!2z5YyX5Lqs5biC6KW_5Z-O5Yy66L-c6KeB5ZCN6IuR77yI5LiJ5pyf5YyX6Zeo77yJIOmCruaUv-e8lueggTogMTAwMDU1!5e0!3m2!1szh-CN!2scn!4v1494757144890"
-                                            width="400" height="300" frameborder="0" style="border:0"
-                                            allowfullscreen></iframe>
-                                </div>
+{#                                <div class="widget">#}
+{#                                    <h3 class="widget-title">到达这里</h3>#}
+{#                                    <iframe src="http://www.google.cn/maps/embed?pb=!1m18!1m12!1m3!1d3061.3214883894257!2d116.33483666515049!3d39.88943389546333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35f04de89c42054d%3A0xa2f5eca565eb0226!2z5YyX5Lqs5biC6KW_5Z-O5Yy66L-c6KeB5ZCN6IuR77yI5LiJ5pyf5YyX6Zeo77yJIOmCruaUv-e8lueggTogMTAwMDU1!5e0!3m2!1szh-CN!2scn!4v1494757144890"#}
+{#                                            width="400" height="300" frameborder="0" style="border:0"#}
+{#                                            allowfullscreen></iframe>#}
+{#                                </div>#}
                                 <!-- END RIGHT SIDEBAR CONTENT -->
                             </div>
                         </div>

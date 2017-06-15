@@ -4,6 +4,12 @@ from wtforms import StringField, TextAreaField, BooleanField, SelectField, valid
 from wtforms.validators import DataRequired
 
 
+class UploadForm(FlaskForm):
+    img = FileField('图片', validators=[
+        FileAllowed(['jpg', 'png'], '仅能上传图片!')
+    ])
+
+
 class HumanForm(FlaskForm):
     name = StringField('音乐人名', [DataRequired('音乐人名必填')])
     content = TextAreaField('音乐人简介', [DataRequired('音乐人简介必填')])

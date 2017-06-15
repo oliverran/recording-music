@@ -7,6 +7,12 @@ from flask_sqlalchemy import SQLAlchemy
 db = SQLAlchemy()
 
 
+class Image(db.Model):
+    __tablename__ = 'image'
+    id = db.Column(db.Integer, primary_key=True)
+    img = db.Column(db.String, nullable=True)
+
+
 class Human(db.Model):
     __tablename__ = 'human'
 
