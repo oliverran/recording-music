@@ -43,7 +43,7 @@
         <!-- NAVBAR -->
         {% block navbar %}
 
-            <nav class="navbar navbar-default " role="navigation">
+            <nav class="navbar navbar-default " role="navigation" style="z-index: 9999">
                 <div class="container">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
@@ -52,7 +52,7 @@
                             <i class="fa fa-bars"></i>
                         </button>
                         <a href="{{ url_for('music.index') }}" class="navbar-brand navbar-logo">
-                            <img src="{{ url_for('static',filename='music_static/img/logo/repute-logo-nav.png') }}"
+                            <img src="{{ url_for('static',filename='music_static/img/logo/logo.png') }}"
                                  alt="Repute Lite - Free Bootstrap Business Template">
                         </a>
                     </div>
@@ -147,15 +147,15 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-5">
-                                <p>我们喜欢热爱音乐，所以一直坚持前行。</p>
+                                <p style="font-size: large" ><strong>我们喜欢热爱音乐，所以一直坚持前行。</strong></p>
 
-                                <p> 记录音乐recording-music平台：
+                                <p style="font-size: medium" > 记录音乐recording-music平台：
                                     我们会把全国所有优秀的音乐人、团队、录音棚等信息展示在这里。
                                     我们提供不同地域优秀音乐人为您打造属于自己的好音乐，好歌曲。
                                     也欢迎更多热爱音乐的朋友加入我们</p>
                                 <br>
                                 <div class="widget">
-                                    <img src="{{ url_for('static',filename='music_static/img/weixin.jpg') }}" alt="微信">
+                                    <img src="{{ url_for('static',filename='music_static/img/weixin.png') }}" alt="微信">
                                 </div>
 
                                 <!-- CONCTACT FORM -->

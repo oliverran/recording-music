@@ -65,10 +65,13 @@ class DelImg(MethodView):
     def get(self, id=None):
         image = db.session.query(Image).get(id)  # 如果有id 从数据库读取这个id项
         img_name = image.img
-        os.remove(UPLOAD_FOLDER + '/' + img_name)
         if image:
             db.session.delete(image)  # 如果有这个项  删除此项
             db.session.commit()
+        try:
+            os.remove(UPLOAD_FOLDER + '/' + img_name)
+        except:
+            pass
         return redirect(url_for('admin.img_list'))
 
 

@@ -45,7 +45,7 @@
         <!-- NAVBAR -->
         {% block navbar %}
 
-            <nav class="navbar navbar-default " role="navigation">
+            <nav class="navbar navbar-default " role="navigation" style="z-index: 9999">
                 <div class="container">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
@@ -54,7 +54,7 @@
                             <i class="fa fa-bars"></i>
                         </button>
                         <a href="{{ url_for('music.index') }}" class="navbar-brand navbar-logo">
-                            <img src="{{ url_for('static',filename='music_static/img/logo/repute-logo-nav.png') }}"
+                            <img src="{{ url_for('static',filename='music_static/img/logo/logo.png') }}"
                                  alt="Repute Lite - Free Bootstrap Business Template">
                         </a>
                     </div>

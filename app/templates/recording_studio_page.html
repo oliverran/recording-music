@@ -46,7 +46,7 @@
         <!-- NAVBAR -->
         {% block navbar %}
 
-            <nav class="navbar navbar-default " role="navigation">
+            <nav class="navbar navbar-default " role="navigation" style="z-index: 9999">
                 <div class="container">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
@@ -55,7 +55,7 @@
                             <i class="fa fa-bars"></i>
                         </button>
                         <a href="{{ url_for('music.index') }}" class="navbar-brand navbar-logo">
-                            <img src="{{ url_for('static',filename='music_static/img/logo/repute-logo-nav.png') }}"
+                            <img src="{{ url_for('static',filename='music_static/img/logo/logo.png') }}"
                                  alt="Repute Lite - Free Bootstrap Business Template">
                         </a>
                     </div>
@@ -192,3 +192,30 @@
     </body>
 {% endblock %}
 </html>
+
+<div id="myCarousel" class="carousel slide">
+    <!-- 轮播（Carousel）指标 -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+        <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+    </ol>
+    <!-- 轮播（Carousel）项目 -->
+    <div class="carousel-inner">
+        <div class="item active">
+            <img src="http://127.0.0.1:8000/profile/%E9%A1%B9%E7%9B%AE2.jpg/" alt="First slide">
+            <div class="carousel-caption">标题 1</div>
+        </div>
+        <div class="item">
+            <img src="http://127.0.0.1:8000/profile/%E9%A1%B9%E7%9B%AE2.jpg/" alt="Second slide" class="">
+            <div class="carousel-caption">标题 2</div>
+        </div>
+        <div class="item">
+            <img src="http://127.0.0.1:8000/profile/%E9%A1%B9%E7%9B%AE2.jpg/" alt="Third slide" class="">
+            <div class="carousel-caption">标题 3</div>
+        </div>
+    </div>
+    <!-- 轮播（Carousel）导航 -->
+    <a class="carousel-control left" href="#myCarousel" data-slide="prev">‹</a>
+    <a class="carousel-control right" href="#myCarousel" data-slide="next">›</a>
+</div>
