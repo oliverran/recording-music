@@ -136,7 +136,6 @@ class HumanCreateOrEdit(MethodView):
     def get(self, id=None):
         human = Human() if not id else db.session.query(Human).get(id)  # 如果没有id创建实例，如果有数据库读取这个id项
         form = HumanForm(request.form) if not id else HumanForm(obj=human)  # 如果没有id 请求表单项内容，如果有表单内容是从数据库得到
-        # form.log_category_id.choices = [(d.id, d.category) for d in Log_Category.query.all()]  # 分类从数据库查询到 做推导
         return render_template('admin/write-article.html', form=form)
 
     def post(self, id=None):
@@ -186,7 +185,6 @@ class StudioCreateOrEdit(MethodView):
     def get(self, id=None):
         studio = Studio() if not id else db.session.query(Studio).get(id)  # 如果没有id创建实例，如果有数据库读取这个id项
         form = StudioForm(request.form) if not id else StudioForm(obj=studio)  # 如果没有id 请求表单项内容，如果有表单内容是从数据库得到
-        # form.log_category_id.choices = [(d.id, d.category) for d in Log_Category.query.all()]  # 分类从数据库查询到 做推导
         return render_template('admin/write-article.html', form=form)
 
     def post(self, id=None):
@@ -235,7 +233,6 @@ class NewsCreateOrEdit(MethodView):
     def get(self, id=None):
         news = News() if not id else db.session.query(News).get(id)  # 如果没有id创建实例，如果有数据库读取这个id项
         form = NewsForm(request.form) if not id else NewsForm(obj=news)  # 如果没有id 请求表单项内容，如果有表单内容是从数据库得到
-        # form.log_category_id.choices = [(d.id, d.category) for d in Log_Category.query.all()]  # 分类从数据库查询到 做推导
         return render_template('admin/write-article.html', form=form)
 
     def post(self, id=None):
